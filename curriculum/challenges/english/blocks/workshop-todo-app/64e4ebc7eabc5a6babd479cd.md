@@ -306,7 +306,9 @@ closeTaskFormBtn.addEventListener("click", () => {
   confirmCloseDialog.showModal();
 });
 
-cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
+cancelBtn.addEventListener("click", () =>
+  confirmCloseDialog.close()
+);
 
 --fcc-editable-region--
 

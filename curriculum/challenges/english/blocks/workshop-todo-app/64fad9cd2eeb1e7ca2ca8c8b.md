@@ -314,7 +314,6 @@ const addOrUpdateTask = () => {
 
 --fcc-editable-region--
 
---fcc-editable-region--
 
 const reset = () => {
   titleInput.value = "";
@@ -337,7 +336,9 @@ closeTaskFormBtn.addEventListener("click", () => {
   }
 });
 
-cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
+cancelBtn.addEventListener("click", () =>
+  confirmCloseDialog.close()
+);
 
 discardBtn.addEventListener("click", () => {
   confirmCloseDialog.close();
@@ -347,9 +348,8 @@ discardBtn.addEventListener("click", () => {
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  taskData.forEach(
-    ({ id, title, date, description }) => {
-        tasksContainer.innerHTML += `
+  taskData.forEach(({id, title, date, description}) => {
+      tasksContainer.innerHTML += `
         <div class="task" id="${id}">
           <p><strong>Title:</strong> ${title}</p>
           <p><strong>Date:</strong> ${date}</p>
@@ -360,6 +360,7 @@ taskForm.addEventListener("submit", (e) => {
       `;
     }
   );
+--fcc-editable-region--
 
   reset();
 });
